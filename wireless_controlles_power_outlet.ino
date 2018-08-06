@@ -22,6 +22,9 @@ const int pinTombol = D5;
 const int pinLampu = D6;
 const int pinKipas = D7;
 
+void handleLampu();
+void handleKipas();
+
 void setup {
   pinMode(pinLampu, OUTPUT);
   pinMode(pinKipas, OUTPUT);
@@ -67,4 +70,16 @@ void setup {
 }
 
 void loop {
+}
+
+void handleLampu() {
+  digitalWrite(pinLampu, !digitalRead(pinLampu));
+  server.sendHeader("location", "/");
+  server.send(303);
+}
+
+void handleKipas() {
+  digitalWrite(pinKipas, !digitalRead(pinKipas));
+  server.sendHeader("location", "/");
+  server.send(303);
 }
