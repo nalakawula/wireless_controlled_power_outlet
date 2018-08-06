@@ -22,6 +22,8 @@ const int pinTombol = D5;
 const int pinLampu = D6;
 const int pinKipas = D7;
 
+Pushbutton tombol(pinTombol);
+
 void handleLampu();
 void handleKipas();
 
