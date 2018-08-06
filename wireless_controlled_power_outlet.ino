@@ -110,6 +110,7 @@ void setup() {
 }  
   
 void loop() {
+  ArduinoOTA.handle();
   server.handleClient();
   if (tombol.getSingleDebouncedRelease()) {
     digitalWrite(pinLampu, !digitalRead(pinLampu));
