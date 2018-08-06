@@ -27,7 +27,7 @@ Pushbutton tombol(pinTombol);
 void handleLampu();
 void handleKipas();
 
-void setup {
+void setup() {
   pinMode(pinLampu, OUTPUT);
   pinMode(pinKipas, OUTPUT);
 
@@ -85,7 +85,7 @@ void setup {
   Serial.println("HTTP server started");
 }  
   
-void loop {
+void loop() {
   server.handleClient();
   if (tombol.getSingleDebouncedRelease()) {
     digitalWrite(pinLampu, !digitalRead(pinLampu));
