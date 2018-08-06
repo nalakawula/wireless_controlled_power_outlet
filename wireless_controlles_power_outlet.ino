@@ -86,6 +86,11 @@ void setup {
 }  
   
 void loop {
+  server.handleClient();
+  if (tombol.getSingleDebouncedRelease()) {
+    digitalWrite(pinLampu, !digitalRead(pinLampu));
+    digitalWrite(pinKipas, !digitalRead(pinKipas));
+  }
 }
 
 //kompresi
