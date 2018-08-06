@@ -23,6 +23,47 @@ const int pinLampu = D6;
 const int pinKipas = D7;
 
 void setup {
+  pinMode(pinLampu, OUTPUT);
+  pinMode(pinKipas, OUTPUT);
+
+  digitalWrite(pinLampu, LOW);
+  digitalWrite(pinKipas, LOW);
+
+  Serial.begin(115200);
+  delay(10);
+  Serial.println('\n');
+
+  //multi SSID
+  wifiMulti.addAP("dd-wrt_vap", "Kero.007.123");
+  wifiMulti.addAP("Viva", "hidupsehat");
+
+  Serial.println("Connecting ...");
+  int i = 0;
+
+  //coba konek
+  if (wifiMulti.run() == WL_CONNECTED) {
+    Serial.println('\n');
+    Serial.print("Connected to ");
+    Serial.println(WiFi.SSID());
+    Serial.print("IP address:\t");
+    Serial.println(WiFi.localIP());
+  }
+
+  //fail over ke mode AP jika gagal konek
+  if (wifiMulti.run() != WL_CONNECTED) {
+    Serial.println('\n');
+    Serial.print("Can not connect to AP, fallback to AP Mode ");
+    WiFi.softAP(ssid, password);
+    IPAddress myIP = WiFi.softAPIP();
+    Serial.print("AP IP address: ");
+    Serial.println(myIP);
+  }
+
+  if (MDNS.begin("esp8266")) {
+    Serial.println("mDNS responder started");
+  } else {
+    Serial.println("Error setting up MDNS responder!");
+  }
 }
 
 void loop {
