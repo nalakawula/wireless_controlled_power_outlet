@@ -69,8 +69,22 @@ void setup {
   } else {
     Serial.println("Error setting up MDNS responder!");
   }
-}
 
+
+  SPIFFS.begin();
+  
+  server.onNotFound([]() {
+    if (!handleFileRead(server.uri()))
+      server.send(404, "text/plain", "404: Not Found");
+  });
+
+  server.on("/lampu", handleLampu);
+  server.on("/kipas", handleKipas);
+
+  server.begin();
+  Serial.println("HTTP server started");
+}  
+  
 void loop {
 }
 
