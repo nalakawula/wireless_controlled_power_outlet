@@ -10,8 +10,8 @@
 ESP8266WiFiMulti wifiMulti;
 
 //soft AP
-const char *ssid = "SSID";
-const char *password = "PASSWD";
+const char *ssid = "softap_SSID";
+const char *password = "softap_PASSWD";
 
 ESP8266WebServer server(80);
 
@@ -39,8 +39,8 @@ void setup() {
   Serial.println('\n');
 
   //multi SSID
-  wifiMulti.addAP("dd-wrt_vap", "Kero.007.123");
-  wifiMulti.addAP("Viva", "hidupsehat");
+  wifiMulti.addAP("SSID1", "PASS1");
+  wifiMulti.addAP("SSID2", "PASS2");
 
   Serial.println("Connecting ...");
   int i = 0;
