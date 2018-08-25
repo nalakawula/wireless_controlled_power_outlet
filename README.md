@@ -22,3 +22,7 @@ I'm not sure if i must share my schematic, give me a shot if you want the schema
 Hi man, the sea water was salty, i don't want to reinvent the wheel. Let's use the ready to served library. I need:
 - Hw library for my wemos d1 mini, here https://wiki.wemos.cc/tutorials:get_started:get_started_in_arduino
 - push button lib, i need debouncing feature without headache. I use this one from pololu https://github.com/pololu/pushbutton-arduino
+
+
+## side notes:
+i'm not smart person, so whatever you find incorrect thing, you must deal with that. And i'm not responsible for any damage or injury if you follow my project.
