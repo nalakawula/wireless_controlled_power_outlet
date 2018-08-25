@@ -16,7 +16,7 @@ So, i need:
 - Some cable
 
 ## schematic
-Here, my schematic
+I'm not sure if i must share my schematic, give me a shot if you want the schematic.
 
 ## The arduino lib that i used
 Hi man, the sea water was salty, i don't want to reinvent the wheel. Let's use the ready to served library. I need:
